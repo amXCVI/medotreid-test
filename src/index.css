@@ -1,13 +1,31 @@
-body {
+@font-face {
+  font-family: MullerRegular;
+  src: url(./fonts/muller/Fontfabric-Muller-Regular.otf);
+ }
+
+ @font-face {
+  font-family: MullerMedium;
+  src: url(./fonts/muller/Fontfabric-Muller-Medium.otf);
+ }
+
+ @font-face {
+  font-family: MullerLight;
+  src: url(./fonts/muller/Fontfabric-Muller-Light.otf);
+ }
+
+ @font-face {
+  font-family: MullerBold;
+  src: url(./fonts/muller/Fontfabric-Muller-Bold.otf);
+ }
+ 
+ body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+
+  font-family: 'MullerRegular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Muller, source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

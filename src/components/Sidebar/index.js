@@ -121,7 +121,6 @@ const Sidebar = () => {
         <Toolbar>
             <div className={classes.toolbarContent}>EA</div>
           <IconButton
-            color="#303030"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"

@@ -131,6 +131,9 @@ const Sidebar = () => {
             <MenuIcon />
           </IconButton>
         </Toolbar>
+        <div className={classes.userBox}>
+          
+        </div>
       </AppBar>
       <Drawer
         variant="permanent"

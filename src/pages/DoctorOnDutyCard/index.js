@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
+
 import ShortCard from '../../components/ShortCard';
 
 import Terminal from '../../assets/icons/Terminal';
@@ -52,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
+  errorCard: {
+    border: '2px solid rgba(255, 17, 70, 0.388849)',
+  }
 }));
 
 const DoctorOnDutyCard = () => {
@@ -60,6 +65,8 @@ const DoctorOnDutyCard = () => {
   const [allEmployes, setAllEmployes] = useState(employes);
   const [employeeId, setEmployeeId] = useState(0);
   const [employeeIndex, setEmployeeIndex] = useState(0);
+
+  const [result, setResult] = useState(true);
 
   const nextEmployee = (id) => {
     if (id === allEmployes.length) {
@@ -88,7 +95,7 @@ const DoctorOnDutyCard = () => {
   }
 
   return (
-    <div className={classes.mainCard}>
+    <div className={clsx(classes.mainCard, !result && classes.errorCard)}>
       <div className={classes.addressPage}>
         Очередь
         <span className={classes.addressPageLight}> / 20.01.20 {allEmployes[employeeId].name}</span>
@@ -124,6 +131,8 @@ const DoctorOnDutyCard = () => {
           total={allEmployes.filter((item) => !item.isSubscribe).length}
           nextEmployee={nextEmployee}
           employeeIndex={employeeIndex}
+          setResult={setResult}
+          result={result}
         />
       </div>
     </div>

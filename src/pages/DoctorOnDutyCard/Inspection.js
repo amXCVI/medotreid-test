@@ -164,7 +164,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Inspection = ({ employee, subscribeEmployee, total, nextEmployee, employeeIndex }) => {
+const Inspection = ({ employee, subscribeEmployee, total, nextEmployee, employeeIndex, setResult, result }) => {
   const classes = useStyles();
   const wrapperRef = useRef(null);
 
@@ -176,7 +176,6 @@ const Inspection = ({ employee, subscribeEmployee, total, nextEmployee, employee
   const [isEditPromille, setIsEditPromille] = useState(false);
   const [isEditTemp, setIsEditTemp] = useState(false);
 
-  const [result, setResult] = useState(false);
 
   const setAllInputsFalse = () => {
     setIsEditAd(false);
@@ -203,8 +202,12 @@ const Inspection = ({ employee, subscribeEmployee, total, nextEmployee, employee
     subscribeEmployee(employee.id, employeeIndex);
   }
 
+
   useOutsideClicker(wrapperRef);
 
+  const changeResult = (e) => {
+    setResult(e);  
+  }
   return (
     <div className={classes.mainCard}>
       <div className={classes.stepsBlock}>
@@ -284,7 +287,7 @@ const Inspection = ({ employee, subscribeEmployee, total, nextEmployee, employee
               labelId="result"
               id="result"
               value={result}
-              onChange={(e) => setResult(e.target.value)}
+              onChange={(e) => changeResult(e.target.value)}
               label="Age"
               className={result ? classes.resultSelectSuccess : classes.resultSelectError}
             >

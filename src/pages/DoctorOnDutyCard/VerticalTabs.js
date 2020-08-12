@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const VerticalTabs = ({ employee, subscribeEmployee, total, nextEmployee, employeeIndex }) => {
+const VerticalTabs = ({ employee, subscribeEmployee, total, nextEmployee, employeeIndex, setResult, result }) => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
 
@@ -109,6 +109,8 @@ const VerticalTabs = ({ employee, subscribeEmployee, total, nextEmployee, employ
           total={total}
           nextEmployee={nextEmployee}
           employeeIndex={employeeIndex}
+          setResult={setResult}
+          result={result}
         />
       </TabPanel>
       <TabPanel value={value} index={1} className={classes.tabPanel}>
